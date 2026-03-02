@@ -1,7 +1,7 @@
 
 import math
 
-# 1. min и max
+# 1. min и maxx
 numbers = [5, 10, 25]
 print(f"min({numbers}) = {min(numbers)}")
 print(f"max({numbers}) = {max(numbers)}")

@@ -1,5 +1,5 @@
 
-
+#
 # 1. Импорт всего модуля
 import mymodule
 mymodule.greeting("Jonathan")          # Hello, Jonathan

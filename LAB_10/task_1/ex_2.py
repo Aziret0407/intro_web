@@ -1,4 +1,4 @@
-
+#
 
 try:
     import camelcase

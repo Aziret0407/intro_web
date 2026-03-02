@@ -1,4 +1,4 @@
-
+#
 def greeting(name):
     """Выводит приветствие для указанного имени."""
     print(f"Hello, {name}")
