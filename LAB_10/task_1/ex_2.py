@@ -1,7 +1,4 @@
-"""
-Демонстрация сторонней библиотеки camelcase.
-Перед запуском установите её: pip install camelcase
-"""
+
 
 try:
     import camelcase
