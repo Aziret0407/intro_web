@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Audio</title>
+</head>
+<body>
+    <h1>Working with Audio in HTML</h1>
+
+    <h2>Basic Audio with Controls</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Audio with Autoplay and Loop</h2>
+    <audio controls autoplay loop muted>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p><small>Note: Autoplay is muted to comply with browser policies.</small></p>
+
+    <h2>Audio with Fallback Text</h2>
+    <audio controls>
+        <source src="nonexistent.mp3" type="audio/mpeg">
+        Your browser does not support the audio element. Please update your browser.
+    </audio>
+
+    <p><strong>Note:</strong> For audio to work, place an audio file named "audio.mp3" in the same folder.</p>
+</body>
+</html>

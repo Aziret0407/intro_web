@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Video</title>
+</head>
+<body>
+    <h1>Working with Video in HTML</h1>
+
+    <h2>Basic Video with Controls</h2>
+    <video width="400" controls>
+        <source src="video.mp4" type="video/mp4">
+        <source src="video.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Video with Poster Image</h2>
+    <video width="400" controls poster="poster.jpg">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Video with Autoplay, Muted and Loop</h2>
+    <video width="400" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p><small>Note: Autoplay is muted to comply with browser policies.</small></p>
+
+    <p><strong>Note:</strong> For video to work, place a video file named "video.mp4" and image "poster.jpg" in the same folder.</p>
+</body>
+</html>
