@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation - All Examples</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 500px; }
+        input { margin: 5px 0; padding: 8px; width: 100%; }
+        button { margin: 10px 0; padding: 8px 15px; cursor: pointer; }
+        hr { margin: 30px 0; }
+        .result { margin-top: 10px; padding: 10px; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>Form Validation - All Examples</h1>
+
+    <hr>
+    <h3>Lab 1: Get Form Data (value)</h3>
+    <input type="text" id="lab1-username" placeholder="Enter username">
+    <button onclick="getUsername()">Submit</button>
+    <div id="lab1-result" class="result"></div>
+
+    <hr>
+    <h3>Lab 2: Empty Field Validation</h3>
+    <input type="text" id="lab2-name" placeholder="Name">
+    <input type="email" id="lab2-email" placeholder="Email">
+    <button onclick="checkEmptyFields()">Submit</button>
+
+    <hr>
+    <h3>Lab 3: Email Validation</h3>
+    <input type="email" id="lab3-email" placeholder="Enter email">
+    <button onclick="validateEmail()">Submit</button>
+
+    <hr>
+    <h3>Lab 4: Number Validation</h3>
+    <input type="text" id="lab4-age" placeholder="Enter age">
+    <button onclick="validateNumber()">Submit</button>
+
+    <hr>
+    <h3>Lab 5: Complete Form Validation</h3>
+    <form id="lab5-form">
+        <input type="text" id="lab5-name" placeholder="Name">
+        <input type="email" id="lab5-email" placeholder="Email">
+        <input type="text" id="lab5-age" placeholder="Age">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="lab5-result" class="result"></div>
+
+    <script>
+        // Lab 1: Get Form Data
+        function getUsername() {
+            let username = document.getElementById("lab1-username").value;
+            document.getElementById("lab1-result").innerText = "Username: " + username;
+        }
+
+        // Lab 2: Empty Field Validation
+        function checkEmptyFields() {
+            let name = document.getElementById("lab2-name").value;
+            let email = document.getElementById("lab2-email").value;
+
+            if (name === "" || email === "") {
+                alert("All fields are required!");
+            } else {
+                alert("Form submitted successfully!");
+            }
+        }
+
+        // Lab 3: Email Validation
+        function validateEmail() {
+            let email = document.getElementById("lab3-email").value;
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (pattern.test(email)) {
+                alert("Email is valid!");
+            } else {
+                alert("Please enter a valid email address!");
+            }
+        }
+
+        // Lab 4: Number Validation
+        function validateNumber() {
+            let age = document.getElementById("lab4-age").value;
+
+            if (age === "" || isNaN(age)) {
+                alert("Please enter a valid number!");
+            } else {
+                alert("Age: " + age);
+            }
+        }
+
+        // Lab 5: Complete Form Validation
+        document.getElementById("lab5-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("lab5-name").value;
+            let email = document.getElementById("lab5-email").value;
+            let age = document.getElementById("lab5-age").value;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name === "" || email === "" || age === "") {
+                document.getElementById("lab5-result").innerText = "All fields are required!";
+                document.getElementById("lab5-result").style.color = "red";
+            }
+            else if (!emailPattern.test(email)) {
+                document.getElementById("lab5-result").innerText = "Invalid email format!";
+                document.getElementById("lab5-result").style.color = "red";
+            }
+            else if (isNaN(age)) {
+                document.getElementById("lab5-result").innerText = "Age must be a number!";
+                document.getElementById("lab5-result").style.color = "red";
+            }
+            else {
+                document.getElementById("lab5-result").innerHTML = "<strong>Success!</strong><br>Name: " + name + "<br>Email: " + email + "<br>Age: " + age;
+                document.getElementById("lab5-result").style.color = "green";
+                document.getElementById("lab5-result").style.background = "#e8f5e9";
+            }
+        });
+    </script>
+</body>
+</html>
