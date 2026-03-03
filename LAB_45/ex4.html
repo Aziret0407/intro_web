@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4: Search Users</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 600px; margin: auto; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        ul { list-style: none; padding: 0; }
+        li {
+            background: #f4f4f4;
+            margin: 8px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lab 4: Search Users by Name</h2>
+    <input type="text" id="searchInput" placeholder="Type to search users..." onkeyup="filterUsers()">
+    <ul id="userList"></ul>
+
+    <script>
+        let users = [];
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(data => {
+                users = data;
+                displayUsers(users);
+            });
+
+        function displayUsers(usersToShow) {
+            let html = '';
+            usersToShow.forEach(user => {
+                html += `<li><strong>${user.name}</strong><br>${user.email}</li>`;
+            });
+            document.getElementById('userList').innerHTML = html;
+        }
+
+        function filterUsers() {
+            let searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            let filtered = users.filter(user =>
+                user.name.toLowerCase().includes(searchTerm)
+            );
+            displayUsers(filtered);
+        }
+    </script>
+</body>
+</html>

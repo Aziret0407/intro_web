@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 3: Random Joke</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 600px; margin: auto; text-align: center; }
+        .joke-container {
+            background: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .setup { font-size: 20px; font-weight: bold; color: #2c3e50; }
+        .punchline { font-size: 18px; color: #27ae60; margin-top: 15px; }
+        button {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+    <h2>Lab 3: Fetch Random Joke</h2>
+    <div class="joke-container">
+        <div id="setup" class="setup">Click button to get a joke</div>
+        <div id="punchline" class="punchline"></div>
+    </div>
+    <button onclick="getJoke()">Get New Joke</button>
+
+    <script>
+        function getJoke() {
+            fetch('https://official-joke-api.appspot.com/random_joke')
+                .then(response => response.json())
+                .then(joke => {
+                    document.getElementById('setup').textContent = joke.setup;
+                    document.getElementById('punchline').textContent = joke.punchline;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 2: Display Posts</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 800px; margin: auto; }
+        .post {
+            background: #f9f9f9;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .post h3 { color: #2c3e50; margin-top: 0; }
+        .post p { color: #555; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <h2>Lab 2: Display Posts from API (First 5)</h2>
+    <div id="posts"></div>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts?_limit=5')
+            .then(response => response.json())
+            .then(posts => {
+                let html = '';
+                posts.forEach(post => {
+                    html += `
+                        <div class="post">
+                            <h3>${post.title}</h3>
+                            <p>${post.body}</p>
+                        </div>
+                    `;
+                });
+                document.getElementById('posts').innerHTML = html;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
