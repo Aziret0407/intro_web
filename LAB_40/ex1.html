@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation - All Examples</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .box { width: 200px; height: 100px; background: lightgray; margin: 10px 0; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+        hr { margin: 20px 0; }
+        img { width: 200px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation - All Examples</h1>
+
+    <hr>
+    <h3>Lab 1: Change Text with getElementById</h3>
+    <p id="lab1-text">Original text</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <hr>
+    <h3>Lab 2: Change Style with querySelector</h3>
+    <div class="box" id="lab2-box"></div>
+    <button onclick="changeColor()">Change Color</button>
+
+    <hr>
+    <h3>Lab 3: Change HTML with innerHTML</h3>
+    <div id="lab3-content">This is normal text</div>
+    <button onclick="changeHTML()">Make it Heading</button>
+
+    <hr>
+    <h3>Lab 4: Change Image with setAttribute</h3>
+    <img id="lab4-img" src="https://via.placeholder.com/200x150/3498db/ffffff?text=Image+1" alt="Placeholder">
+    <br>
+    <button onclick="changeImage()">Change Image</button>
+
+    <hr>
+    <h3>Lab 5: Add List Items with createElement</h3>
+    <ul id="lab5-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeLastItem()">Remove Last</button>
+
+    <script>
+        // Lab 1
+        function changeText() {
+            document.getElementById("lab1-text").innerText = "Text Updated!";
+        }
+
+        // Lab 2
+        function changeColor() {
+            document.querySelector("#lab2-box").style.backgroundColor = "blue";
+        }
+
+        // Lab 3
+        function changeHTML() {
+            document.getElementById("lab3-content").innerHTML = "<h2>New Heading</h2>";
+        }
+
+        // Lab 4
+        function changeImage() {
+            document.getElementById("lab4-img").setAttribute("src",
+                "https://via.placeholder.com/200x150/e74c3c/ffffff?text=Image+2");
+        }
+
+        // Lab 5
+        function addItem() {
+            let list = document.getElementById("lab5-list");
+            let newItem = document.createElement("li");
+            newItem.innerText = "New Item";
+            list.appendChild(newItem);
+        }
+
+        function removeLastItem() {
+            let list = document.getElementById("lab5-list");
+            if (list.children.length > 0) {
+                list.removeChild(list.lastElementChild);
+            }
+        }
+    </script>
+</body>
+</html>
