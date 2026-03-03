@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1: Display Property</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Display Property Demonstration</h1>
+
+    <div class="section">
+        <h2>1. display: block</h2>
+        <p>Block elements take full width and start on new lines:</p>
+        <div class="block-demo">Block 1</div>
+        <div class="block-demo">Block 2</div>
+        <div class="block-demo">Block 3</div>
+    </div>
+
+    <div class="section">
+        <h2>2. display: inline</h2>
+        <p>Inline elements sit next to each other:</p>
+        <span class="inline-demo">Inline 1</span>
+        <span class="inline-demo">Inline 2</span>
+        <span class="inline-demo">Inline 3</span>
+        <p class="note">Note: width/height have no effect on inline elements.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. display: inline-block</h2>
+        <p>Inline-block elements sit next to each other but respect width/height:</p>
+        <div class="inline-block-demo">Box 1</div>
+        <div class="inline-block-demo">Box 2</div>
+        <div class="inline-block-demo">Box 3</div>
+    </div>
+
+    <div class="section">
+        <h2>4. display: none</h2>
+        <p>This element is hidden using display: none:</p>
+        <div class="none-demo">This text will not be visible</div>
+        <p>The element above takes no space in the layout.</p>
+    </div>
+
+    <div class="explanation">
+        <h3>Display Values Summary:</h3>
+        <table class="summary-table">
+            <tr><th>Value</th><th>Behavior</th></tr>
+            <tr><td>block</td><td>Full width, starts new line</td></tr>
+            <tr><td>inline</td><td>Only as wide as content, no width/height</td></tr>
+            <tr><td>inline-block</td><td>Inline but respects width/height</td></tr>
+            <tr><td>none</td><td>Element completely hidden</td></tr>
+        </table>
+    </div>
+</body>
+</html>

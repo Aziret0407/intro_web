@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Z-Index Property</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Z-Index Property Demonstration</h1>
+
+    <div class="section">
+        <h2>Stacking Order with z-index</h2>
+        <p>Elements with higher z-index appear on top:</p>
+
+        <div class="zindex-container">
+            <div class="zindex-box box1">Box 1<br>z-index: 1</div>
+            <div class="zindex-box box2">Box 2<br>z-index: 2</div>
+            <div class="zindex-box box3">Box 3<br>z-index: 3</div>
+            <div class="zindex-box box4">Box 4<br>z-index: auto (default)</div>
+        </div>
+
+        <div class="note">
+            <p><strong>Note:</strong> Box 3 (green) has highest z-index (3) and appears on top. Box 1 (red) has lowest z-index (1) and appears at the bottom.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Complex Stacking Example</h2>
+
+        <div class="complex-container">
+            <div class="complex-box background-layer">
+                Background Layer<br>z-index: 1
+            </div>
+
+            <div class="complex-box middle-layer">
+                Middle Layer<br>z-index: 2
+            </div>
+
+            <div class="complex-box foreground-layer">
+                Foreground Layer<br>z-index: 3
+            </div>
+
+            <div class="complex-box negative-layer">
+                Negative Layer<br>z-index: -1
+            </div>
+        </div>
+
+        <div class="explanation" style="margin-top: 150px;">
+            <h3>Z-Index Rules:</h3>
+            <ul>
+                <li>Higher z-index values appear on top of lower values</li>
+                <li>Elements with negative z-index appear behind parent elements</li>
+                <li>z-index only works on positioned elements (not static)</li>
+                <li>If z-index is not set, later elements appear on top of earlier ones</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Interactive Comparison</h2>
+
+        <div class="comparison-container">
+            <div class="comparison-box box-a">A<br>z-index: 10</div>
+            <div class="comparison-box box-b">B<br>z-index: 20</div>
+            <div class="comparison-box box-c">C<br>z-index: 15</div>
+        </div>
+
+        <p>Order from top to bottom: B (20), C (15), A (10)</p>
+
+        <table class="summary-table">
+            <tr><th>Element</th><th>z-index</th><th>Stacking Order</th></tr>
+            <tr><td>Box B</td><td>20</td><td>Top (1st)</td></tr>
+            <tr><td>Box C</td><td>15</td><td>Middle (2nd)</td></tr>
+            <tr><td>Box A</td><td>10</td><td>Bottom (3rd)</td></tr>
+        </table>
+    </div>
+</body>
+</html>
