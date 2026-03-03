@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5: @font-face Custom Fonts</title>
+
+    <style>
+        /* Define custom fonts using @font-face */
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('fonts/OpenSans-Regular.woff2') format('woff2'),
+                 url('fonts/OpenSans-Regular.woff') format('woff'),
+                 url('fonts/OpenSans-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('fonts/OpenSans-Bold.woff2') format('woff2'),
+                 url('fonts/OpenSans-Bold.woff') format('woff'),
+                 url('fonts/OpenSans-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MyHeadingFont';
+            src: url('fonts/Montserrat-Bold.woff2') format('woff2'),
+                 url('fonts/Montserrat-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MyHeadingFont';
+            src: url('fonts/Montserrat-Regular.woff2') format('woff2'),
+                 url('fonts/Montserrat-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Apply custom fonts */
+        body {
+            font-family: 'MyCustomFont', Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 40px;
+        }
+
+        h1, h2 {
+            font-family: 'MyHeadingFont', 'Times New Roman', serif;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .normal-text {
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .bold-text {
+            font-weight: bold;
+            font-size: 20px;
+            color: #0066cc;
+        }
+
+        .note {
+            background-color: #ffffcc;
+            padding: 15px;
+            border-left: 4px solid #ffcc00;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>@font-face Custom Fonts Demonstration</h1>
+
+    <p class="normal-text">This text uses a custom font loaded with @font-face. The font files should be placed in a 'fonts' folder in your project directory.</p>
+
+    <h2>Heading with Custom Font</h2>
+
+    <p class="bold-text">This is bold text using the same custom font family but with bold weight.</p>
+
+    <p>Regular paragraph with custom font. The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+
+    <div class="note">
+        <p><strong>Note:</strong> For this example to work, you need to download font files (.woff2, .woff, .ttf) and place them in a 'fonts' folder in the same directory as this HTML file. You can download free fonts from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.</p>
+    </div>
+
+    <h3>Project Structure Required:</h3>
+    <pre>
+LAB_26/
+    ├── ex5.html
+    └── fonts/
+        ├── OpenSans-Regular.woff2
+        ├── OpenSans-Regular.woff
+        ├── OpenSans-Regular.ttf
+        ├── OpenSans-Bold.woff2
+        ├── OpenSans-Bold.woff
+        ├── OpenSans-Bold.ttf
+        ├── Montserrat-Bold.woff2
+        ├── Montserrat-Bold.woff
+        ├── Montserrat-Regular.woff2
+        └── Montserrat-Regular.woff
+    </pre>
+</body>
+</html>

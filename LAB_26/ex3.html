@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Text Shadows</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .shadow1 {
+            text-shadow: 2px 2px 5px gray;
+            font-size: 36px;
+        }
+
+        .shadow2 {
+            text-shadow: 0px 0px 10px blue;
+            font-size: 36px;
+            color: white;
+        }
+
+        .shadow3 {
+            text-shadow: 4px 4px 0px red, 8px 8px 0px orange;
+            font-size: 36px;
+        }
+
+        .shadow4 {
+            text-shadow: -3px -3px 5px rgba(255,0,0,0.5);
+            font-size: 36px;
+        }
+
+        .shadow5 {
+            text-shadow: 0px 0px 15px green;
+            font-size: 48px;
+            color: white;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            margin: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Shadow Examples</h1>
+
+    <div class="container">
+        <h2 class="shadow1">1. Simple Gray Shadow (2px 2px 5px gray)</h2>
+    </div>
+
+    <div class="container" style="background-color: #333;">
+        <h2 class="shadow2">2. Blue Glow Effect (0px 0px 10px blue)</h2>
+    </div>
+
+    <div class="container">
+        <h2 class="shadow3">3. Multiple Shadows (4px 4px red, 8px 8px orange)</h2>
+    </div>
+
+    <div class="container">
+        <h2 class="shadow4">4. Top-Left Shadow (-3px -3px 5px rgba(255,0,0,0.5))</h2>
+    </div>
+
+    <div class="container" style="background-color: black;">
+        <h2 class="shadow5">5. Green Glow on Dark Background</h2>
+    </div>
+</body>
+</html>
