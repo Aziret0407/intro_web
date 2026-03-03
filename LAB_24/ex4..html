@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4: Order Form</title>
+</head>
+<body>
+    <h1>Product Order Form</h1>
+
+    <form method="post">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="product">Select Product:</label><br>
+        <select id="product" name="product">
+            <option value="laptop">Laptop - $999</option>
+            <option value="phone">Smartphone - $699</option>
+            <option value="tablet">Tablet - $499</option>
+            <option value="headphones">Headphones - $199</option>
+        </select><br><br>
+
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1"><br><br>
+
+        <button type="submit">Place Order</button>
+        <button type="reset">Reset Form</button>
+    </form>
+</body>
+</html>
