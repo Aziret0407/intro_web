@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Merged Cells Table</title>
+</head>
+<body>
+    <h1>Table with Merged Cells</h1>
+
+    <h2>Weekly Schedule</h2>
+    <table border="1">
+        <tr>
+            <th colspan="3">Weekly Schedule (colspan example)</th>
+        </tr>
+        <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Activity</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Monday</td>
+            <td>10:00 AM</td>
+            <td>Meeting</td>
+        </tr>
+        <tr>
+            <td>2:00 PM</td>
+            <td>Work on project</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>11:00 AM</td>
+            <td>Team discussion</td>
+        </tr>
+    </table>
+
+    <p><strong>Note:</strong> Monday cell uses rowspan="2" to span two rows. Header uses colspan="3" to span all columns.</p>
+</body>
+</html>
