@@ -1,0 +1,25 @@
+/* Element selector */
+p {
+    color: green;
+    font-size: 16px;
+}
+
+/* Class selector */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+}
+
+/* ID selector */
+#special {
+    color: blue;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+/* Heading style */
+h1 {
+    color: darkblue;
+    text-align: center;
+}

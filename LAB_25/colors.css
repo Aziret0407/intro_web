@@ -1,0 +1,43 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Color name */
+.color-name {
+    color: red;
+    font-weight: bold;
+}
+
+/* HEX color */
+.hex-color {
+    background-color: #FF4500;
+    color: white;
+    padding: 10px;
+}
+
+/* RGB color */
+.rgb-color {
+    color: rgb(0, 0, 255);
+    font-style: italic;
+}
+
+/* RGBA color */
+.rgba-color {
+    background-color: rgba(0, 255, 0, 0.3);
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* Div with HEX background */
+.color-demo {
+    background-color: #ADD8E6;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333333;
+    text-align: center;
+}
