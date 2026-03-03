@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Flex Wrap and Flex Grow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Exercise 3: Flex Wrap and Flex Grow</h1>
+
+    <div class="section">
+        <h2>1. flex-wrap: nowrap (default)</h2>
+        <p>Items stay in one line and may overflow:</p>
+        <div class="flex-container nowrap" style="width: 400px;">
+            <div class="box box-wide">Item 1</div>
+            <div class="box box-wide">Item 2</div>
+            <div class="box box-wide">Item 3</div>
+            <div class="box box-wide">Item 4</div>
+            <div class="box box-wide">Item 5</div>
+            <div class="box box-wide">Item 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. flex-wrap: wrap</h2>
+        <p>Items wrap to next line when needed:</p>
+        <div class="flex-container wrap" style="width: 400px;">
+            <div class="box box-wide">Item 1</div>
+            <div class="box box-wide">Item 2</div>
+            <div class="box box-wide">Item 3</div>
+            <div class="box box-wide">Item 4</div>
+            <div class="box box-wide">Item 5</div>
+            <div class="box box-wide">Item 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. flex-wrap: wrap-reverse</h2>
+        <p>Items wrap in reverse order:</p>
+        <div class="flex-container wrap-reverse" style="width: 400px;">
+            <div class="box box-wide">Item 1</div>
+            <div class="box box-wide">Item 2</div>
+            <div class="box box-wide">Item 3</div>
+            <div class="box box-wide">Item 4</div>
+            <div class="box box-wide">Item 5</div>
+            <div class="box box-wide">Item 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. flex-grow: 0 (default)</h2>
+        <p>Items do not grow to fill space:</p>
+        <div class="flex-container">
+            <div class="box grow0">No grow</div>
+            <div class="box grow0">No grow</div>
+            <div class="box grow0">No grow</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. flex-grow: 1 (equal growth)</h2>
+        <p>All items grow equally to fill space:</p>
+        <div class="flex-container">
+            <div class="box grow1">Grow 1</div>
+            <div class="box grow1">Grow 1</div>
+            <div class="box grow1">Grow 1</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. flex-grow: different values</h2>
+        <p>Items grow proportionally (1:2:1):</p>
+        <div class="flex-container">
+            <div class="box grow1">Grow 1</div>
+            <div class="box grow2">Grow 2</div>
+            <div class="box grow1">Grow 1</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. flex-grow with wrap combined</h2>
+        <p>Items wrap and grow to fill lines:</p>
+        <div class="flex-container wrap" style="width: 500px;">
+            <div class="box grow1">Item 1</div>
+            <div class="box grow1">Item 2</div>
+            <div class="box grow1">Item 3</div>
+            <div class="box grow1">Item 4</div>
+            <div class="box grow1">Item 5</div>
+            <div class="box grow1">Item 6</div>
+            <div class="box grow1">Item 7</div>
+            <div class="box grow1">Item 8</div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>Flex Wrap and Flex Grow:</h3>
+        <ul>
+            <li><strong>flex-wrap:</strong> nowrap (default) | wrap | wrap-reverse</li>
+            <li><strong>flex-grow:</strong> 0 (default) | number (proportional growth)</li>
+            <li>Items with higher flex-grow values take more space</li>
+        </ul>
+    </div>
+</body>
+</html>

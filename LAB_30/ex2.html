@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Flex Direction and Alignment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Exercise 2: Flex Direction and Alignment</h1>
+
+    <div class="section">
+        <h2>1. flex-direction: row (default)</h2>
+        <div class="flex-container row">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. flex-direction: row-reverse</h2>
+        <div class="flex-container row-reverse">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. flex-direction: column</h2>
+        <div class="flex-container column">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. flex-direction: column-reverse</h2>
+        <div class="flex-container column-reverse">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. justify-content: flex-start (default)</h2>
+        <div class="flex-container justify-start">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. justify-content: center</h2>
+        <div class="flex-container justify-center">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. justify-content: flex-end</h2>
+        <div class="flex-container justify-end">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. justify-content: space-between</h2>
+        <div class="flex-container space-between">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. justify-content: space-around</h2>
+        <div class="flex-container space-around">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>10. justify-content: space-evenly</h2>
+        <div class="flex-container space-evenly">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>11. align-items: stretch (default)</h2>
+        <p>Items stretch to fill container height (boxes have different heights):</p>
+        <div class="flex-container align-stretch" style="height: 150px;">
+            <div class="box" style="height: auto;">Short</div>
+            <div class="box" style="height: auto; padding: 20px 10px;">Medium content</div>
+            <div class="box" style="height: auto; padding: 30px 10px;">Tall content here</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>12. align-items: center</h2>
+        <div class="flex-container align-center" style="height: 150px;">
+            <div class="box" style="height: auto;">Short</div>
+            <div class="box" style="height: auto; padding: 20px 10px;">Medium</div>
+            <div class="box" style="height: auto; padding: 30px 10px;">Tall</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>13. align-items: flex-start</h2>
+        <div class="flex-container align-start" style="height: 150px;">
+            <div class="box" style="height: auto;">Short</div>
+            <div class="box" style="height: auto; padding: 20px 10px;">Medium</div>
+            <div class="box" style="height: auto; padding: 30px 10px;">Tall</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>14. align-items: flex-end</h2>
+        <div class="flex-container align-end" style="height: 150px;">
+            <div class="box" style="height: auto;">Short</div>
+            <div class="box" style="height: auto; padding: 20px 10px;">Medium</div>
+            <div class="box" style="height: auto; padding: 30px 10px;">Tall</div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>Flexbox Properties Summary:</h3>
+        <ul>
+            <li><strong>flex-direction:</strong> row | row-reverse | column | column-reverse</li>
+            <li><strong>justify-content:</strong> flex-start | center | flex-end | space-between | space-around | space-evenly</li>
+            <li><strong>align-items:</strong> stretch | center | flex-start | flex-end</li>
+        </ul>
+    </div>
+</body>
+</html>

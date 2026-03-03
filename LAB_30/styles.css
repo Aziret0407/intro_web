@@ -1,0 +1,285 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #2980b9;
+    margin-top: 0;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.explanation {
+    background-color: #e8f4fd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    border-left: 5px solid #3498db;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #c7254e;
+}
+
+/* Box styles used across all exercises */
+.box {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.box-wide {
+    min-width: 100px;
+}
+
+/* Container styles */
+.block-container {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Exercise 1 specific */
+.flex-container .box {
+    margin: 5px;
+}
+
+/* Exercise 2 specific */
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+    height: auto;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+    height: auto;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+/* Exercise 3 specific */
+.nowrap {
+    flex-wrap: nowrap;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.grow0 {
+    flex-grow: 0;
+}
+
+.grow1 {
+    flex-grow: 1;
+}
+
+.grow2 {
+    flex-grow: 2;
+}
+
+/* Exercise 4 specific - Navigation Menus */
+.nav-menu {
+    display: flex;
+    background-color: #34495e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: white;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #3498db;
+}
+
+/* Basic menu - space-around */
+.nav-menu:not(.logo-nav):not(.search-nav):not(.responsive-nav):not(.centered-nav):not(.icon-nav) {
+    justify-content: space-around;
+}
+
+/* Logo navigation */
+.logo-nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background-color: #e74c3c;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Search navigation */
+.search-nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    gap: 5px;
+}
+
+.search-box input {
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive navigation */
+.responsive-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grow-item {
+    flex-grow: 1;
+    text-align: center;
+    min-width: 100px;
+}
+
+/* Centered navigation */
+.centered-nav {
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Icon navigation */
+.icon-nav {
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .search-box input {
+        width: 120px;
+    }
+    
+    .icon-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

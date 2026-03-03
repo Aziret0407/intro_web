@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4: Adaptive Navigation Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Exercise 4: Adaptive Navigation Menu</h1>
+
+    <div class="section">
+        <h2>Basic Navigation Menu</h2>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">About</a>
+            <a href="#" class="nav-item">Services</a>
+            <a href="#" class="nav-item">Portfolio</a>
+            <a href="#" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">Contact</a>
+        </nav>
+        <p>Simple flex menu with <code>justify-content: space-around</code></p>
+    </div>
+
+    <div class="section">
+        <h2>Navigation with Logo and Items</h2>
+        <nav class="nav-menu logo-nav">
+            <div class="logo">LOGO</div>
+            <div class="nav-links">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">About</a>
+                <a href="#" class="nav-item">Services</a>
+                <a href="#" class="nav-item">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="section">
+        <h2>Navigation with Search Bar</h2>
+        <nav class="nav-menu search-nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Products</a>
+            <a href="#" class="nav-item">About</a>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button>Go</button>
+            </div>
+            <a href="#" class="nav-item">Login</a>
+        </nav>
+    </div>
+
+    <div class="section">
+        <h2>Responsive Navigation (try resizing window)</h2>
+        <p>This menu uses <code>flex-wrap: wrap</code> to adapt to smaller screens:</p>
+        <nav class="nav-menu responsive-nav">
+            <a href="#" class="nav-item grow-item">Home</a>
+            <a href="#" class="nav-item grow-item">About</a>
+            <a href="#" class="nav-item grow-item">Services</a>
+            <a href="#" class="nav-item grow-item">Portfolio</a>
+            <a href="#" class="nav-item grow-item">Blog</a>
+            <a href="#" class="nav-item grow-item">Contact</a>
+            <a href="#" class="nav-item grow-item">FAQ</a>
+            <a href="#" class="nav-item grow-item">Support</a>
+        </nav>
+    </div>
+
+    <div class="section">
+        <h2>Centered Navigation</h2>
+        <nav class="nav-menu centered-nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">About</a>
+            <a href="#" class="nav-item">Services</a>
+            <a href="#" class="nav-item">Contact</a>
+        </nav>
+    </div>
+
+    <div class="section">
+        <h2>Navigation with Icons (text only demo)</h2>
+        <nav class="nav-menu icon-nav">
+            <a href="#" class="nav-item">🏠 Home</a>
+            <a href="#" class="nav-item">📁 Projects</a>
+            <a href="#" class="nav-item">📞 Contact</a>
+            <a href="#" class="nav-item">⚙️ Settings</a>
+        </nav>
+    </div>
+
+    <div class="explanation">
+        <h3>Flexbox Navigation Features:</h3>
+        <ul>
+            <li><code>display: flex</code> on nav container</li>
+            <li><code>justify-content</code> for spacing (space-between, space-around, center)</li>
+            <li><code>flex-wrap: wrap</code> for responsiveness</li>
+            <li><code>flex-grow</code> for equal width items</li>
+            <li><code>align-items: center</code> for vertical alignment</li>
+        </ul>
+    </div>
+</body>
+</html>
