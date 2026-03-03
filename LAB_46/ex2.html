@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 2: Modal Window</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 1000px; margin: auto; }
+        h2 { text-align: center; color: #333; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .modal-content {
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid white;
+            border-radius: 5px;
+        }
+        .close {
+            position: absolute;
+            top: 30px; right: 50px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lab 2: Modal Window for Image Preview</h2>
+    <div class="gallery" id="gallery">
+        <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Image+1" alt="Image 1">
+        <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Image+2" alt="Image 2">
+        <img src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Image+3" alt="Image 3">
+        <img src="https://via.placeholder.com/300x200/f39c12/ffffff?text=Image+4" alt="Image 4">
+        <img src="https://via.placeholder.com/300x200/9b59b6/ffffff?text=Image+5" alt="Image 5">
+        <img src="https://via.placeholder.com/300x200/1abc9c/ffffff?text=Image+6" alt="Image 6">
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        let modal = document.getElementById("modal");
+        let modalImg = document.getElementById("modalImage");
+
+        document.querySelectorAll("#gallery img").forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            };
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

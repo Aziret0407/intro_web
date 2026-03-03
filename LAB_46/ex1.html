@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 1: Basic Image Gallery</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 1000px; margin: auto; }
+        h2 { text-align: center; color: #333; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h2>Lab 1: Basic Image Gallery</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Image+1" alt="Image 1">
+        <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Image+2" alt="Image 2">
+        <img src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Image+3" alt="Image 3">
+        <img src="https://via.placeholder.com/300x200/f39c12/ffffff?text=Image+4" alt="Image 4">
+        <img src="https://via.placeholder.com/300x200/9b59b6/ffffff?text=Image+5" alt="Image 5">
+        <img src="https://via.placeholder.com/300x200/1abc9c/ffffff?text=Image+6" alt="Image 6">
+    </div>
+</body>
+</html>
