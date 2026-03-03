@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asynchronous JavaScript - All Examples</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript - Check Console (F12)</h1>
+    <hr>
+    <h3>Lab 1: Synchronous vs Asynchronous</h3>
+    <hr>
+    <h3>Lab 2: setTimeout</h3>
+    <hr>
+    <h3>Lab 3: setInterval</h3>
+    <hr>
+    <h3>Lab 4: Promise Success</h3>
+    <hr>
+    <h3>Lab 5: Promise with Error Handling</h3>
+
+    <script>
+        console.log("=== LAB 1: SYNCHRONOUS VS ASYNCHRONOUS ===");
+        console.log("Start");
+        setTimeout(() => {
+            console.log("Inside setTimeout (after 2 seconds)");
+        }, 2000);
+        console.log("End");
+
+        console.log("\n=== LAB 2: SETTIMEOUT DELAYED MESSAGE ===");
+
+        function delayedMessage(message, delay) {
+            setTimeout(() => {
+                console.log(message);
+            }, delay);
+        }
+
+        delayedMessage("Hello, after 3 seconds!", 3000);
+
+        console.log("\n=== LAB 3: SETINTERVAL COUNTER ===");
+
+        function startCounter() {
+            let count = 1;
+            let interval = setInterval(() => {
+                console.log("Counter:", count);
+                count++;
+                if (count > 5) {
+                    clearInterval(interval);
+                    console.log("Counter stopped");
+                }
+            }, 1000);
+        }
+
+        // Uncomment to run Lab 3 (will run every second)
+        // setTimeout(startCounter, 4000); // Start after Lab 2
+
+        console.log("\n=== LAB 4: PROMISE SUCCESS ===");
+
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Data received");
+                }, 2000);
+            });
+        }
+
+        fetchData()
+            .then(result => {
+                console.log(result);
+            })
+            .finally(() => {
+                console.log("Request completed");
+            });
+
+        console.log("\n=== LAB 5: PROMISE WITH ERROR HANDLING ===");
+
+        function fetchRandomData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (Math.random() > 0.5) {
+                        resolve("Data received");
+                    } else {
+                        reject("Error: Failed to fetch data");
+                    }
+                }, 2000);
+            });
+        }
+
+        fetchRandomData()
+            .then(result => {
+                console.log("Success:", result);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            })
+            .finally(() => {
+                console.log("Request completed");
+            });
+    </script>
+</body>
+</html>
