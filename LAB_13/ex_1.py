@@ -1,10 +1,3 @@
-"""
-Laboratory Work #13: Regular Expressions in Python
-Student: [Your Name]
-Group: [Your Group]
-Date: 2026
-"""
-
 import re
 
 # ============================================================
