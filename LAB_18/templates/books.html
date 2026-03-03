@@ -1,0 +1,20 @@
+<!-- templates/books.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong> by {{ book.author }} ({{ book.year }})
+                - <a href="/book/{{ book.id }}">details</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Back to home</a></p>
+</body>
+</html>
