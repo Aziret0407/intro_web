@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Manipulation with JS - All Examples</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 600px; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+        hr { margin: 30px 0; }
+        .box { width: 100px; height: 100px; background: blue; position: relative; }
+        .highlight {
+            color: white;
+            background: orange;
+            font-weight: bold;
+            border: 2px solid red;
+            padding: 10px;
+        }
+        #lab1-text { padding: 10px; transition: all 0.3s; }
+        #lab3-text { opacity: 1; transition: opacity 0.3s; }
+        #lab5-text { font-size: 24px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>CSS Manipulation with JS - All Examples</h1>
+
+    <hr>
+    <h3>Lab 1: Changing Styles via style Property</h3>
+    <p id="lab1-text">This paragraph will change when you click the button</p>
+    <button onclick="changeStyles()">Change Styles</button>
+
+    <hr>
+    <h3>Lab 2: Adding/Removing Classes (classList)</h3>
+    <p id="lab2-text">Click the button to toggle highlight class</p>
+    <button onclick="toggleHighlight()">Toggle Class</button>
+
+    <hr>
+    <h3>Lab 3: Animation with setTimeout (Fade Effect)</h3>
+    <p id="lab3-text">This text will fade out</p>
+    <button onclick="fadeOut()">Fade Out</button>
+
+    <hr>
+    <h3>Lab 4: Animation with setInterval (Moving Box)</h3>
+    <div class="box" id="moving-box"></div>
+    <button onclick="startMove()">Move Box</button>
+    <button onclick="stopMove()">Stop</button>
+
+    <hr>
+    <h3>Lab 5: Blinking Text with setInterval</h3>
+    <p id="lab5-text">Blinking Text</p>
+    <button onclick="startBlink()">Start Blink</button>
+    <button onclick="stopBlink()">Stop</button>
+
+    <script>
+        // Lab 1: Change Styles
+        function changeStyles() {
+            let text = document.getElementById("lab1-text");
+            text.style.color = "white";
+            text.style.backgroundColor = "black";
+            text.style.fontSize = "24px";
+            text.style.padding = "20px";
+            text.style.borderRadius = "10px";
+        }
+
+        // Lab 2: Toggle Class
+        function toggleHighlight() {
+            let text = document.getElementById("lab2-text");
+            text.classList.toggle("highlight");
+        }
+
+        // Lab 3: Fade Out with setTimeout
+        function fadeOut() {
+            let text = document.getElementById("lab3-text");
+            text.style.opacity = "1";
+
+            setTimeout(() => { text.style.opacity = "0.7"; }, 500);
+            setTimeout(() => { text.style.opacity = "0.4"; }, 1000);
+            setTimeout(() => { text.style.opacity = "0.1"; }, 1500);
+            setTimeout(() => { text.style.opacity = "0"; }, 2000);
+        }
+
+        // Lab 4: Moving Box with setInterval
+        let moveInterval;
+        let position = 0;
+        let box = document.getElementById("moving-box");
+
+        function startMove() {
+            if (moveInterval) clearInterval(moveInterval);
+            position = 0;
+            moveInterval = setInterval(() => {
+                if (position < 300) {
+                    position += 5;
+                    box.style.left = position + "px";
+                } else {
+                    clearInterval(moveInterval);
+                }
+            }, 50);
+        }
+
+        function stopMove() {
+            clearInterval(moveInterval);
+        }
+
+        // Lab 5: Blinking Text with setInterval
+        let blinkInterval;
+        let blinkText = document.getElementById("lab5-text");
+        let isRed = true;
+
+        function startBlink() {
+            if (blinkInterval) clearInterval(blinkInterval);
+            blinkInterval = setInterval(() => {
+                blinkText.style.color = isRed ? "blue" : "red";
+                isRed = !isRed;
+            }, 500);
+        }
+
+        function stopBlink() {
+            clearInterval(blinkInterval);
+            blinkText.style.color = "black";
+        }
+    </script>
+</body>
+</html>
