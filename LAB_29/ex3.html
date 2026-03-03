@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Borders and Border Radius</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Borders and Border Radius Demonstration</h1>
+
+    <div class="section">
+        <h2>Border Styles</h2>
+
+        <div class="border-container">
+            <div class="border-box border-solid">
+                <div class="border-label">solid</div>
+            </div>
+            <div class="border-box border-dashed">
+                <div class="border-label">dashed</div>
+            </div>
+            <div class="border-box border-dotted">
+                <div class="border-label">dotted</div>
+            </div>
+            <div class="border-box border-double">
+                <div class="border-label">double</div>
+            </div>
+            <div class="border-box border-groove">
+                <div class="border-label">groove</div>
+            </div>
+            <div class="border-box border-ridge">
+                <div class="border-label">ridge</div>
+            </div>
+            <div class="border-box border-inset">
+                <div class="border-label">inset</div>
+            </div>
+            <div class="border-box border-outset">
+                <div class="border-label">outset</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Border Width and Color</h2>
+
+        <div class="border-container">
+            <div class="border-box border-thin">
+                <div class="border-label">thin</div>
+            </div>
+            <div class="border-box border-medium">
+                <div class="border-label">medium</div>
+            </div>
+            <div class="border-box border-thick">
+                <div class="border-label">thick</div>
+            </div>
+            <div class="border-box border-colored">
+                <div class="border-label">red border</div>
+            </div>
+            <div class="border-box border-custom">
+                <div class="border-label">custom</div>
+            </div>
+            <div class="border-box border-mixed">
+                <div class="border-label">mixed sides</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Border Radius (Rounded Corners)</h2>
+
+        <div class="radius-container">
+            <div class="radius-box radius-small">
+                <div class="radius-label">5px</div>
+            </div>
+            <div class="radius-box radius-medium">
+                <div class="radius-label">15px</div>
+            </div>
+            <div class="radius-box radius-large">
+                <div class="radius-label">30px</div>
+            </div>
+            <div class="radius-box radius-circle">
+                <div class="radius-label">50% (circle)</div>
+            </div>
+            <div class="radius-box radius-elliptical">
+                <div class="radius-label">50px/20px</div>
+            </div>
+            <div class="radius-box radius-individual">
+                <div class="radius-label">individual corners</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Combined Examples</h2>
+
+        <div class="combined-container">
+            <div class="combined-box card-1">
+                <h3>Card 1</h3>
+                <p>Solid border, rounded corners, gradient background</p>
+            </div>
+
+            <div class="combined-box card-2">
+                <h3>Card 2</h3>
+                <p>Dashed border, circle, image background</p>
+            </div>
+
+            <div class="combined-box card-3">
+                <h3>Card 3</h3>
+                <p>Double border, elliptical corners</p>
+            </div>
+
+            <div class="combined-box card-4">
+                <h3>Card 4</h3>
+                <p>No border, only radius and shadow</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>Border and Border Radius Properties:</h3>
+        <pre>
+border: width style color;
+border-radius: value;  /* all corners */
+border-radius: top-left top-right bottom-right bottom-left;
+        </pre>
+    </div>
+</body>
+</html>

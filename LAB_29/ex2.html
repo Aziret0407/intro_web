@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Gradients</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gradient Backgrounds Demonstration</h1>
+
+    <div class="section">
+        <h2>Linear Gradients</h2>
+
+        <div class="gradient-container">
+            <div class="gradient-box linear-basic">
+                <div class="gradient-label">to right</div>
+            </div>
+            <div class="gradient-box linear-top">
+                <div class="gradient-label">to top</div>
+            </div>
+            <div class="gradient-box linear-diagonal">
+                <div class="gradient-label">to bottom right</div>
+            </div>
+            <div class="gradient-box linear-angle">
+                <div class="gradient-label">45deg</div>
+            </div>
+            <div class="gradient-box linear-multi">
+                <div class="gradient-label">multi-color</div>
+            </div>
+            <div class="gradient-box linear-repeat">
+                <div class="gradient-label">repeating</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Radial Gradients</h2>
+
+        <div class="gradient-container">
+            <div class="gradient-box radial-basic">
+                <div class="gradient-label">circle</div>
+            </div>
+            <div class="gradient-box radial-ellipse">
+                <div class="gradient-label">ellipse</div>
+            </div>
+            <div class="gradient-box radial-closest">
+                <div class="gradient-label">closest-side</div>
+            </div>
+            <div class="gradient-box radial-farthest">
+                <div class="gradient-label">farthest-corner</div>
+            </div>
+            <div class="gradient-box radial-multi">
+                <div class="gradient-label">multi-color</div>
+            </div>
+            <div class="gradient-box radial-repeat">
+                <div class="gradient-label">repeating</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Gradient Examples with Text</h2>
+
+        <div class="gradient-examples">
+            <div class="gradient-card linear-card">
+                <h3>Sunset</h3>
+                <p>Linear gradient</p>
+            </div>
+
+            <div class="gradient-card radial-card">
+                <h3>Spotlight</h3>
+                <p>Radial gradient</p>
+            </div>
+
+            <div class="gradient-card multi-card">
+                <h3>Rainbow</h3>
+                <p>Multi-color</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>CSS Gradient Syntax:</h3>
+        <pre>
+linear-gradient(direction, color1, color2, ...)
+radial-gradient(shape size at position, color1, color2, ...)
+        </pre>
+    </div>
+</body>
+</html>

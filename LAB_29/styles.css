@@ -1,0 +1,420 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #2980b9;
+    margin-top: 30px;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.note {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    color: #856404;
+}
+
+.explanation {
+    background-color: #e8f4fd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    border-left: 5px solid #3498db;
+}
+
+pre {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+}
+
+/* ====================================
+   Exercise 1: Background Image Styles
+   ==================================== */
+
+.bg-demo {
+    width: 100%;
+    height: 200px;
+    margin: 15px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+    background-image: url('https://via.placeholder.com/300x200/3498db/ffffff?text=Sample+Image');
+    background-color: #f0f0f0; /* fallback */
+}
+
+.content {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bg-repeat {
+    background-repeat: repeat;
+}
+
+.bg-no-repeat {
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
+.bg-repeat-x {
+    background-repeat: repeat-x;
+    background-size: 100px;
+}
+
+.bg-repeat-y {
+    background-repeat: repeat-y;
+    background-size: 100px;
+}
+
+/* ====================================
+   Exercise 2: Gradient Styles
+   ==================================== */
+
+.gradient-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.gradient-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    flex: 0 0 auto;
+}
+
+.gradient-label {
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Linear Gradients */
+.linear-basic {
+    background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+}
+
+.linear-top {
+    background: linear-gradient(to top, #ff6b6b, #4ecdc4);
+}
+
+.linear-diagonal {
+    background: linear-gradient(to bottom right, #ff6b6b, #4ecdc4);
+}
+
+.linear-angle {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.linear-multi {
+    background: linear-gradient(to right, #ff6b6b, #feca57, #48dbfb, #1dd1a1);
+}
+
+.linear-repeat {
+    background: repeating-linear-gradient(45deg, #ff6b6b 0px, #ff6b6b 10px, #4ecdc4 10px, #4ecdc4 20px);
+}
+
+/* Radial Gradients */
+.radial-basic {
+    background: radial-gradient(circle, #ff6b6b, #4ecdc4);
+}
+
+.radial-ellipse {
+    background: radial-gradient(ellipse, #ff6b6b, #4ecdc4);
+}
+
+.radial-closest {
+    background: radial-gradient(circle closest-side, #ff6b6b, #4ecdc4, #feca57);
+}
+
+.radial-farthest {
+    background: radial-gradient(circle farthest-corner, #ff6b6b, #4ecdc4, #feca57);
+}
+
+.radial-multi {
+    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+}
+
+.radial-repeat {
+    background: repeating-radial-gradient(circle, #ff6b6b 0px, #ff6b6b 10px, #4ecdc4 10px, #4ecdc4 20px);
+}
+
+/* Gradient Cards */
+.gradient-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gradient-card {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.linear-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.radial-card {
+    background: radial-gradient(circle at top left, #f093fb, #f5576c);
+}
+
+.multi-card {
+    background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
+}
+
+/* ====================================
+   Exercise 3: Border Styles
+   ==================================== */
+
+.border-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.border-box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ecf0f1;
+    padding: 5px;
+    flex: 0 0 auto;
+}
+
+.border-label {
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Border Styles */
+.border-solid {
+    border: 3px solid #e74c3c;
+}
+
+.border-dashed {
+    border: 3px dashed #3498db;
+}
+
+.border-dotted {
+    border: 3px dotted #2ecc71;
+}
+
+.border-double {
+    border: 5px double #f39c12;
+}
+
+.border-groove {
+    border: 5px groove #9b59b6;
+}
+
+.border-ridge {
+    border: 5px ridge #1abc9c;
+}
+
+.border-inset {
+    border: 5px inset #e67e22;
+}
+
+.border-outset {
+    border: 5px outset #e67e22;
+}
+
+/* Border Width and Color */
+.border-thin {
+    border: 1px solid #34495e;
+}
+
+.border-medium {
+    border: 3px solid #34495e;
+}
+
+.border-thick {
+    border: 8px solid #34495e;
+}
+
+.border-colored {
+    border: 4px solid #e74c3c;
+}
+
+.border-custom {
+    border: 5px dashed #3498db;
+}
+
+.border-mixed {
+    border-top: 5px solid #e74c3c;
+    border-right: 5px dashed #2ecc71;
+    border-bottom: 5px dotted #f39c12;
+    border-left: 5px double #3498db;
+}
+
+/* Border Radius */
+.radius-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.radius-box {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+
+.radius-label {
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.radius-small {
+    border-radius: 5px;
+}
+
+.radius-medium {
+    border-radius: 15px;
+}
+
+.radius-large {
+    border-radius: 30px;
+}
+
+.radius-circle {
+    border-radius: 50%;
+}
+
+.radius-elliptical {
+    border-radius: 50px/20px;
+}
+
+.radius-individual {
+    border-radius: 20px 50px 10px 30px;
+}
+
+/* Combined Examples */
+.combined-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.combined-box {
+    width: 200px;
+    height: 150px;
+    padding: 15px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-1 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-2 {
+    background-image: url('https://via.placeholder.com/200x150/3498db/ffffff?text=Pattern');
+    background-size: cover;
+    border: 4px dashed #f1c40f;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.card-3 {
+    background: radial-gradient(circle, #ff6b6b, #c44569);
+    border: 6px double #fff;
+    border-radius: 30px 10px 30px 10px;
+}
+
+.card-4 {
+    background: linear-gradient(45deg, #00b09b, #96c93d);
+    border: none;
+    border-radius: 25px 0 25px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
