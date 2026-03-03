@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Responsive Columns</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .equal { grid-template-columns: 1fr 1fr 1fr; }
+        .unequal { grid-template-columns: 1fr 2fr 1fr; }
+        .mixed { grid-template-columns: 100px 1fr 2fr; }
+        .four { grid-template-columns: repeat(4, 1fr); }
+        .explanation {
+            background-color: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c7254e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercise 2: Responsive Columns with fr Units</h1>
+
+    <div class="section">
+        <h2>1. Equal Columns (1fr 1fr 1fr)</h2>
+        <div class="grid-container equal">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Unequal Columns (1fr 2fr 1fr)</h2>
+        <div class="grid-container unequal">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Mixed Units (100px 1fr 2fr)</h2>
+        <div class="grid-container mixed">
+            <div class="grid-item">100px</div>
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Four Columns (repeat(4, 1fr))</h2>
+        <div class="grid-container four">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>fr Unit Explained:</h3>
+        <p>fr = fraction of available space</p>
+        <ul>
+            <li><code>1fr 1fr 1fr</code> - three equal columns</li>
+            <li><code>1fr 2fr 1fr</code> - middle column twice as wide</li>
+            <li><code>repeat(4, 1fr)</code> - four equal columns</li>
+        </ul>
+    </div>
+</body>
+</html>
