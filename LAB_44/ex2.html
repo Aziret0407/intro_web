@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 2: Adding and Deleting Tasks</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 400px; margin: auto; }
+        input { width: 70%; padding: 8px; }
+        button { padding: 8px 15px; background: #28a745; color: white; border: none; cursor: pointer; }
+        .delete-btn { background: #dc3545; margin-left: 10px; padding: 2px 8px; }
+        ul { list-style: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+    <h2>Lab 2: Adding and Deleting Tasks</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+
+            if (task === "") {
+                alert("Task cannot be empty!");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.innerHTML = `${task} <button class="delete-btn" onclick="this.parentElement.remove()">X</button>`;
+
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>

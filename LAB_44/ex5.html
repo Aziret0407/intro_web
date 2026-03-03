@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 5: Editing Tasks</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 400px; margin: auto; }
+        input { width: 70%; padding: 8px; }
+        button { padding: 8px 15px; background: #28a745; color: white; border: none; cursor: pointer; }
+        .delete-btn { background: #dc3545; margin-left: 5px; padding: 2px 8px; }
+        .edit-btn { background: #ffc107; margin-left: 5px; padding: 2px 8px; border: none; cursor: pointer; }
+        ul { list-style: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; display: flex; align-items: center; gap: 5px; }
+        li span { flex: 1; cursor: pointer; }
+        .completed span { text-decoration: line-through; color: gray; }
+        .edit-input { flex: 1; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Lab 5: Editing Tasks</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadTasks);
+
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+
+            if (task === "") {
+                alert("Task cannot be empty!");
+                return;
+            }
+
+            createTaskElement(task, false);
+            input.value = "";
+            saveTasks();
+        }
+
+        function createTaskElement(taskText, isCompleted) {
+            let li = document.createElement("li");
+
+            let span = document.createElement("span");
+            span.textContent = taskText;
+            span.onclick = function() {
+                li.classList.toggle("completed");
+                saveTasks();
+            };
+
+            let editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";
+            editBtn.className = "edit-btn";
+            editBtn.onclick = function() { editTask(li, span); };
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "X";
+            deleteBtn.className = "delete-btn";
+            deleteBtn.onclick = function() {
+                li.remove();
+                saveTasks();
+            };
+
+            li.appendChild(span);
+            li.appendChild(editBtn);
+            li.appendChild(deleteBtn);
+
+            if (isCompleted) {
+                li.classList.add("completed");
+            }
+
+            document.getElementById("taskList").appendChild(li);
+        }
+
+        function editTask(li, span) {
+            let currentText = span.textContent;
+            let input = document.createElement("input");
+            input.type = "text";
+            input.value = currentText;
+            input.className = "edit-input";
+
+            li.insertBefore(input, span);
+            li.removeChild(span);
+
+            let editBtn = li.querySelector(".edit-btn");
+            let deleteBtn = li.querySelector(".delete-btn");
+            editBtn.style.display = "none";
+            deleteBtn.style.display = "none";
+
+            input.addEventListener("keypress", function(e) {
+                if (e.key === "Enter") {
+                    saveEdit(li, input, editBtn, deleteBtn);
+                }
+            });
+
+            input.focus();
+        }
+
+        function saveEdit(li, input, editBtn, deleteBtn) {
+            let newText = input.value.trim();
+            if (newText === "") {
+                alert("Task cannot be empty!");
+                return;
+            }
+
+            let span = document.createElement("span");
+            span.textContent = newText;
+            span.onclick = function() {
+                li.classList.toggle("completed");
+                saveTasks();
+            };
+
+            li.insertBefore(span, input);
+            li.removeChild(input);
+
+            editBtn.style.display = "inline-block";
+            deleteBtn.style.display = "inline-block";
+
+            saveTasks();
+        }
+
+        function saveTasks() {
+            let tasks = [];
+            document.querySelectorAll("#taskList li").forEach(li => {
+                let span = li.querySelector("span");
+                if (span) {
+                    tasks.push({
+                        text: span.textContent,
+                        completed: li.classList.contains("completed")
+                    });
+                }
+            });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            let storedTasks = localStorage.getItem("tasks");
+            if (storedTasks) {
+                let tasks = JSON.parse(storedTasks);
+                tasks.forEach(task => {
+                    createTaskElement(task.text, task.completed);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
