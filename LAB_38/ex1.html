@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Handling & Debugging - All Examples</title>
+</head>
+<body>
+    <h1>Error Handling & Debugging - Check Console (F12)</h1>
+    <hr>
+    <h3>Lab 1: Handling Invalid JSON Parsing</h3>
+    <hr>
+    <h3>Lab 2: Debugging with console.log()</h3>
+    <hr>
+    <h3>Lab 3: Debugging with console.table()</h3>
+    <hr>
+    <h3>Lab 4: Handling Division Errors</h3>
+    <hr>
+    <h3>Lab 5: Debugging Undefined Variable</h3>
+
+    <script>
+        console.log("=== LAB 1: INVALID JSON PARSING ===");
+
+        function parseJSON(jsonStr) {
+            try {
+                let parsed = JSON.parse(jsonStr);
+                console.log("Parsed successfully:", parsed);
+                return parsed;
+            } catch (error) {
+                console.error("Invalid JSON format");
+            }
+        }
+
+        console.log("Testing valid JSON:");
+        parseJSON('{"name": "John", "age": 30}');
+
+        console.log("Testing invalid JSON:");
+        parseJSON('{"name": "John", age: 30}');
+
+        console.log("\n=== LAB 2: DEBUGGING WITH CONSOLE.LOG ===");
+
+        let numbers = [1, 2, 3, 4, 5, 6];
+        let sum = 0;
+
+        console.log("Finding sum of even numbers:");
+        for (let i = 0; i < numbers.length; i++) {
+            console.log("Current number:", numbers[i]);
+            if (numbers[i] % 2 === 0) {
+                console.log("Even number found:", numbers[i]);
+                sum += numbers[i];
+            }
+        }
+        console.log("Final sum of even numbers:", sum);
+
+        console.log("\n=== LAB 3: DEBUGGING WITH CONSOLE.TABLE ===");
+
+        let users = [
+            { name: "Alice", age: 25 },
+            { name: "Bob", age: 30 },
+            { name: "Charlie", age: 22 }
+        ];
+
+        console.log("Users array as table:");
+        console.table(users);
+
+        console.log("\n=== LAB 4: HANDLING DIVISION ERRORS ===");
+
+        function divide(a, b) {
+            try {
+                if (b === 0) {
+                    throw new Error("Division by zero");
+                }
+                let result = a / b;
+                console.log(`Result of ${a} / ${b} =`, result);
+                return result;
+            } catch (error) {
+                console.error("Cannot divide by zero");
+            }
+        }
+
+        divide(10, 2);
+        divide(10, 0);
+
+        console.log("\n=== LAB 5: DEBUGGING UNDEFINED VARIABLE ===");
+
+        try {
+            console.log("Trying to access undefined variable...");
+            console.log(undefinedVar); // This variable is not defined
+        } catch (error) {
+            console.error("Variable is not defined");
+        }
+
+        console.log("Program continues after error handling");
+    </script>
+</body>
+</html>
